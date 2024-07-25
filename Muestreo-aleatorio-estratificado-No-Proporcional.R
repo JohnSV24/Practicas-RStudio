@@ -1,7 +1,7 @@
 #Muestreo Aleatorio Estratificado No Proporcional
-#Funcion a utilizar: strata(data,stranames,size,method)
-#strata pertenece a la library sampling
 
+#strata pertenece a la library sampling
+#Funcion a utilizar: strata(data,stranames,size,method)
 #data: El DataFrame del que se extraera la muestra
 #stratanames: El vector con las variables de estratificacion
 #size: vector con los tamaños de los estratos en la muestra(en el orden 
@@ -20,4 +20,8 @@ set.seed(10)
 muestra_aleatoria <- slice_sample(.data = base, n = 8, replace = F)
 muestra_aleatoria
 
+#Muestreo Aleatorio estratificado no proporcional
+set.seed(10)
+muestra_est_np <- strata(data = base, stratanames = c("nivel_estudios"), size = c(3,5,4), method = "srswor")
+muestra_est_np
 

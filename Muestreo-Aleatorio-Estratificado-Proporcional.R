@@ -16,3 +16,13 @@ n_superior <- sum(with(base, nivel_estudios == "Superior"))/nrow(base)
 n_basico <- sum(with(base, nivel_estudios == "Básico"))/nrow(base)
 n_medio_superior <- sum(with(base, nivel_estudios == "Medio Superior"))/nrow(base)
 
+#Muestreo
+muestra_est_p <- strata(data = base, stratanames = c("nivel_estudios"), size = c(round(12*n_superior), round(12*n_basico), round(12*n_medio_superior)), method = "srswor")
+muestra_est_p
+
+#Muestra de los estratos proporcional
+data.frame(table(muestra_est_p$nivel_estudios))
+#         Var1      Freq
+#1         Básico    4
+#2 Medio Superior    4
+#3       Superior    4

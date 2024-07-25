@@ -10,4 +10,14 @@
 #srswor (simple random sampling without replace), srswr (with replace), 
 #poisson y systematic
 
+#Librerias
 library(sampling)
+library(dplyr)
+
+#Muestreo aleatorio
+base
+set.seed(10)
+muestra_aleatoria <- slice_sample(.data = base, n = 8, replace = F)
+muestra_aleatoria
+
+
